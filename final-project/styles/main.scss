@@ -1,7 +1,10 @@
 // This should be imported by the main.js file
 
+// Font import
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:600,700|Quicksand:300,400,500,700|Roboto:300,400,500');
+
 // test for scss variables
-$primary-color: #2a3fbb;
+$primary-color: #3D4F9F;
 
 * {
   padding: 0;
@@ -10,4 +13,176 @@ $primary-color: #2a3fbb;
 
 h1 {
   color: $primary-color;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
 }
+
+h1.white {
+  color: white;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #8D96BD;
+  font-size: 19px;
+}
+
+strong {
+  font-weight: 500;
+}
+
+section {
+  border-bottom: 1px solid #D8E3FE;
+}
+
+// ------------------------------------------
+//             Navigation Bar
+// ------------------------------------------
+.nav-bar {
+  display: flex;
+  height: 100px;
+  align-items: center;
+  padding: 0 100px;
+  border-bottom: 1px solid #D8E3FE;
+}
+
+.nav-bar button {
+  color: #a6acc1;
+  font-size: 15px;
+  border: transparent;
+  padding: 18px 25px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+}
+
+.nav-bar > button {
+  background-color: #D2E1FF;
+  color: #3A79FF;
+  border-radius: 3px;
+  justify-self: flex-end;
+
+}
+
+.nav-bar button.active {
+  color: #5E81FE;
+}
+
+.social-icons {
+  margin: 0 30px;
+}
+
+.social-icons button.facebook{
+  background: transparent url('/reference/assets/icons/facebook.png') no-repeat center;
+  background-size: contain;
+  padding: 11px 27px;
+}
+
+.social-icons button.telegram{
+  background: transparent url('/reference/assets/icons/telegram.png') no-repeat center;
+  background-size: contain;
+  padding: 9px 27px;
+}
+
+.social-icons button.twitter{
+  background: transparent url('/reference/assets/icons/twitter.png') no-repeat center;
+  background-size: contain;
+  padding: 9px 27px;
+}
+
+.social-icons button.medium{
+  background: transparent url('/reference/assets/icons/medium.png') no-repeat center;
+  background-size: contain;
+  padding: 9px 27px;
+}
+
+.social-icons button:hover {
+  -webkit-filter: grayscale(100%) brightness(50%) sepia(100%) hue-rotate(-180deg) saturate(500%) contrast(0.8);
+  filter: grayscale(100%) brightness(50%) sepia(100%) hue-rotate(-180deg) saturate(500%) contrast(0.8);
+}
+
+.nav-bar nav:nth-child(2) {
+  flex-grow: 5;
+}
+
+.circle-logo {
+  height: 35px;
+  width: 35px;
+  background-color: #5E81FE;
+  border-radius: 50%;
+  margin: 0 60px 0 0;
+}
+
+// ------------------------------------------
+//           ! Navigation Bar
+// ------------------------------------------
+
+
+// ------------------------------------------
+//             PLAN YOUR LIFE
+// ------------------------------------------
+
+.plan-your-life {
+  background: #F1F5FF url('/reference/assets/hero.png') no-repeat 0 -5px;
+  background-size: cover;
+  min-height: 560px;
+  //align-items: center;
+  padding-top: 150px;
+  //display: flex;
+  //justify-content: center;
+  //text-align: center;
+}
+
+.plan-your-life_content {
+  //justify-content: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  //display: flex;
+  //flex-basis: 50%
+  align-items: center;
+
+}
+
+.plan-your-life_title {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+  color: $primary-color;
+  font-size: 60px;
+  margin: 25px 0;
+}
+
+.plan-your-life_text {
+  //font-family: 'Quicksand', sans-serif;
+  //font-weight: 300;
+  padding: 15px;
+  max-width: 550px;
+  line-height: 2;
+  //flex-basis: 50px;
+  //flex:.5;
+}
+
+.plan-your-life_play {
+  height: 60px;
+  width: 60px;
+  //background-color: #5E81FE;
+  background-color: white;
+  border-radius: 50%;
+  margin: 10px;
+  box-shadow: 0 10px 50px #DBDBDB;
+  //posi
+}
+
+.play-icon {
+  -webkit-filter: grayscale(100%) brightness(50%) sepia(100%) hue-rotate(-180deg) saturate(500%) contrast(0.8);
+  filter: grayscale(100%) brightness(50%) sepia(100%) hue-rotate(-180deg) saturate(500%) contrast(0.8);
+  height: 15px;
+  width: 15px;
+}
+
+
+// ------------------------------------------
+//           ! PLAN YOUR LIFE
+// ------------------------------------------
