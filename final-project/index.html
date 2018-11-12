@@ -6,34 +6,41 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link rel="stylesheet" href="./dist/styles.css">
+  <!--  ICON LIBRARY -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 
 <body>
 <!--<h1>Hello world!</h1>-->
-<!--<script src="./dist/bundle.js"></script>-->
+<script src="./dist/bundle.js"></script>
 
 <header class="nav-bar">
-  <div class="circle-logo"></div>
-  <nav>
-    <!--Home, Blog, Features, Pricing, Documentation buttons -->
-    <button class="active">Home</button>
-    <button>Blog</button>
-    <button>Features</button>
-    <button>Pricing</button>
-    <button>Documentation</button>
-  </nav>
-  <nav class="social-icons">
-    <!--Social network buttons-->
-    <button class="facebook"></button> <!--Facebook-->
-    <button class="telegram"></button> <!--Telegram-->
-    <button class="twitter"></button> <!--Twitter--->
-    <button class="medium"></button> <!--Medium---->
-  </nav>
-  <button>
-    Get started
-  </button>
+  <section class="nav-bar__content">
+    <div class="circle-logo"></div>
+    <nav>
+      <!--Home, Blog, Features, Pricing, Documentation buttons -->
+      <button class="active">Home</button>
+      <button>Blog</button>
+      <button>Features</button>
+      <button>Pricing</button>
+      <button>Documentation</button>
+    </nav>
+    <nav class="social-icons">
+      <!--Social network buttons-->
+      <button class="facebook"></button> <!--Facebook-->
+      <button class="telegram"></button> <!--Telegram-->
+      <button class="twitter"></button> <!--Twitter--->
+      <button class="medium"></button> <!--Medium---->
+    </nav>
+    <button class="get-started">
+      Get started
+    </button>
+    <a>
+      <i class="fas fa-bars fa-lg"></i>
+    </a>
+  </section>
 </header>
-<!--<hr>-->
+
 <main>
   <!--Main content of the page-->
   <section class="plan-your-life">
@@ -42,11 +49,13 @@
       <h1 class="small-title">PLAN YOUR LIFE</h1>
       <hr>
       <p class="plan-your-life_title">Increase your <strong>productivity</strong></p>
-      <p class="plan-your-life_text">Brute laoreet efficiendi id his, ea illum nonumes luptatum pro.
+      <p class="plan-your-life_text">
+        Brute laoreet efficiendi id his, ea illum nonumes luptatum pro.
         Usu atqui laudem an, insolens gubergren similique est cu.
         Et vel modus congue vitupereta.
       </p>
       <a class="plan-your-life_play">
+        <i class="fas fa-play fa-xs"></i>
         <!--<img-->
         <!--src="/reference/assets/icons/video-play.png"-->
         <!--class="play-icon"-->
@@ -55,16 +64,27 @@
     </div>
   </section>
   <!--<hr>-->
-  <section>
-    <!--Client logos-->
-    <!--Bitbucket--->
-    <img src="" alt="Bitbucket">
-    <!--AppleWatch-->
-    <img src="" alt="Apple Watch">
-    <!--Facebook---->
-    <img src="" alt="Facebook">
-    <!--Audi-------->
-    <img src="" alt="Audi">
+  <section class="customers">
+    <!--Customers-->
+    <div class="customers__logos">
+      <!--Bitbucket--->
+      <img src="./reference/assets/customers/bitbucket.png" alt="Bitbucket">
+      <!--AppleWatch-->
+      <img src="./reference/assets/customers/apple-watch.png" alt="Apple Watch">
+      <!--Facebook---->
+      <img src="./reference/assets/customers/facebook.png" alt="Facebook">
+      <!--Atlassian--->
+      <img src="./reference/assets/customers/atlassian.png" alt="Atlassian">
+      <!--Audi-------->
+      <img src="./reference/assets/customers/audi.png" alt="Audi">
+      <div class="carousel__icon">
+        <i class="fas fa-circle fa-xs"></i>
+        <i class="fas fa-circle fa-xs"></i>
+        <i class="fas fa-circle fa-xs"></i>
+        <i class="fas fa-circle fa-xs"></i>
+        <i class="fas fa-circle fa-xs"></i>
+      </div>
+    </div>
   </section>
   <!--<hr>-->
   <section>
@@ -129,20 +149,51 @@
     </div>
   </section>
   <!--<hr>-->
-  <section>
-    <!--Our resources-->
-    <h1>OUR RESOURCES</h1>
-    <p>Start reading our blog</p>
-    <div><!-- Carousel -->
-      <button><-</button><!-- Left arrow -->
-      <img src="" alt="Img1">
-      <img src="" alt="Img2">
-      <img src="" alt="Img3">
-      <button>-></button><!-- Right arrow -->
+  <section class="blog">
+    <!--Blog-->
+    <div class="blog__content">
+      <h1>OUR RESOURCES</h1>
+      <p class="blog__title">Start reading our blog</p>
+      <noscript>
+        <style>
+          .blog__carousel, #loading_blog {display:none;}
+        </style>
+        <img src="https://i.imgflip.com/dbxn8.jpg" />
+        <p>For full functionality of this site it is necessary to enable JavaScript.</p>
+      </noscript>
+      <div id="loading_blog">
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/ab79a231234507.564a1d23814ef.gif" />
+      </div>
+      <div class="blog__carousel"><!-- Carousel -->
+        <button class="blog__button">
+          <i class="fas fa-arrow-left fa-2x"></i>
+        </button>
+        <div class="carousel__box">
+          <div class="blog__image">
+            <img id="blog_img_desktop" src="">
+            <img id="blog_img_tablet" src="">
+            <img id="blog_img_mobile_2x" src="">
+            <img id="blog_img_mobile" src="">
+          </div>
+          <div class="blog__text">
+            <p id="blog_title">No text</p>
+            <p id="blog_description">No text</p>
+            <a id="blog_url" href="" target="_blank">Read now</a>
+            <a href="">Add to your bookmarks</a>
+          </div>
+        </div>
+        <button class="blog__button">
+          <i class="fas fa-arrow-right fa-2x"></i>
+        </button>
 
-      <button>&bullet;</button><!-- First image selector -->
-      <button>&bullet;</button><!-- Second image selector -->
-      <button>&bullet;</button><!-- Third image selector -->
+      </div>
+      <div id="carousel_icons" class="carousel__icon">
+        <i class="fas fa-circle fa-xs"></i>
+        <i class="fas fa-circle fa-xs"></i>
+        <i class="fas fa-circle fa-xs"></i>
+        <i class="fas fa-circle fa-xs"></i>
+        <i class="fas fa-circle fa-xs"></i>
+      </div>
     </div>
   </section><!-- /Our Resources -->
   <!--<hr>-->
@@ -223,26 +274,28 @@
 </main>
 <!--<hr>-->
 <footer class="nav-bar">
-  <div class="circle-logo"></div>
-  <nav>
-    <!--Home, Blog, Features, Pricing, Documentation buttons -->
-    <button class="active">Home</button>
-    <button>Blog</button>
-    <button>Features</button>
-    <button>Pricing</button>
-    <button>Documentation</button>
-  </nav>
-  <nav class="social-icons">
-    <!--Social network buttons-->
-    <button class="facebook"></button> <!--Facebook-->
-    <button class="telegram"></button> <!--Telegram-->
-    <button class="twitter"></button> <!--Twitter--->
-    <button class="medium"></button> <!--Medium---->
-  </nav>
-  <button>
-    Get started
-  </button>
-  <p>Copyright &copy; 2018 By Random Site</p>
+  <section class="nav-bar__content">
+    <div class="circle-logo"></div>
+    <nav>
+      <!--Home, Blog, Features, Pricing, Documentation buttons -->
+      <button class="active">Home</button>
+      <button>Blog</button>
+      <button>Features</button>
+      <button>Pricing</button>
+      <button>Documentation</button>
+    </nav>
+    <nav class="social-icons">
+      <!--Social network buttons-->
+      <button class="facebook"></button> <!--Facebook-->
+      <button class="telegram"></button> <!--Telegram-->
+      <button class="twitter"></button> <!--Twitter--->
+      <button class="medium"></button> <!--Medium---->
+    </nav>
+    <button>
+      Get started
+    </button>
+    <!--<p>Copyright &copy; 2018 By Random Site</p>-->
+  </section>
 </footer>
 </body>
 </html>
