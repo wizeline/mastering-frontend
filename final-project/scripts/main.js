@@ -9,9 +9,10 @@ const after = before
 console.log({ before });
 console.log({ after });
 
-let blogArticle = null;
 let articleNumber = 0;
+let blogArticle = null;
 let blogArticles = null;
+const url = 'https://wt-4662f45b9eefda7172b747b28d23efdb-0.sandbox.auth0-extend.com/blog';
 
 function loadContent () {
   blogArticle.title.innerHTML=blogArticles[articleNumber].title;
@@ -49,29 +50,53 @@ function loadPrev() {
   loadContent();
 }
 
-function getBlog() {
-  fetch('https://wt-4662f45b9eefda7172b747b28d23efdb-0.sandbox.auth0-extend.com/blog')
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(myJson) {
-      blogArticles = myJson.articles;
-    });
-
-  blogArticle = {
-    title: document.getElementById("blog_title"),
-    description: document.getElementById("blog_description"),
-    url: document.getElementById("blog_url"),
-    images: {
-      desktop:document.getElementById("blog_img_desktop"),
-      tablet:document.getElementById("blog_img_tablet"),
-      mobile2x:document.getElementById("blog_img_mobile_2x"),
-      mobile:document.getElementById("blog_img_mobile")
+const getSiteElements = new Promise(
+  (resolve) => {
+    window.onload = function () {
+      const article = {
+        title: document.getElementById("blog_title"),
+        description: document.getElementById("blog_description"),
+        url: document.getElementById("blog_url"),
+        images: {
+          desktop: document.getElementById("blog_img_desktop"),
+          tablet: document.getElementById("blog_img_tablet"),
+          mobile2x: document.getElementById("blog_img_mobile_2x"),
+          mobile: document.getElementById("blog_img_mobile")
+        }
+      };
+      resolve(article);
     }
-  };
+  }
+);
 
-  setTimeout(loadContent,600);
-  setTimeout(finishLoading,700);
+async function getData() {
+  return new Promise(
+    (resolve) => {
+      fetch(url)
+        .then(function(response) {
+          resolve(response.json());
+        })
+    }
+  )
 }
 
-setTimeout(getBlog, 500);
+async function setData() {
+  try {
+    console.log('starting');
+
+    let article = await getSiteElements;
+    let blogData = await getData(article);
+
+    blogArticle = article;
+    blogArticles = blogData.articles;
+    loadContent();
+    finishLoading();
+
+  }catch(error){
+    console.log(error.message);
+  }
+}
+
+(async () => {
+  await setData();
+})();
